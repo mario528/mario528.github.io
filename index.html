@@ -62,6 +62,45 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Javascript-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/17/Javascript-ajax/" class="article-date">
+  <time datetime="2018-06-17T14:28:04.000Z" itemprop="datePublished">2018-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/17/Javascript-ajax/">原生Javascript-ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本知识点"><a href="#基本知识点" class="headerlink" title="基本知识点"></a>基本知识点</h2><h3 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h3><blockquote>
+<p>MSXML2.XMLHTTP<br>MSXML2.XMLHTTP.3.0<br>MSXML2.XMLHTTP.6.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function createXHR()&#123;</span><br><span class="line">    if (typeof arguments.callee.activeXString != &quot;string&quot;)&#123;</span><br><span class="line">            var versions = [&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;,</span><br><span class="line">                            &quot;MSXML2.XMLHttp&quot;],</span><br><span class="line">    i, len;</span><br><span class="line">    for (i=0,len=versions.length; i &lt; len; i++)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                    new ActiveXObject(versions[i]);</span><br><span class="line">                    arguments.callee.activeXString = versions[i];</span><br><span class="line">                    break;</span><br><span class="line">                    &#125; catch (ex)&#123; //</span><br><span class="line">                    &#125; &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">    return new ActiveXObject(arguments.callee.activeXString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/17/Javascript-ajax/" data-id="cjiixo8540000v8yvy387nhhi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-基于原生javascript的懒加载" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/17/基于原生javascript的懒加载/" class="article-date">
@@ -90,7 +129,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/" data-id="cjihqban00001lkyvdtw86f1u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/" data-id="cjiixo85c0002v8yve99khndd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/13/hello-world/" data-id="cjihqbamv0000lkyvdt1r6djy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/13/hello-world/" data-id="cjiixo8590001v8yv1ysw2gcu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -174,6 +213,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/06/17/Javascript-ajax/">原生Javascript-ajax</a>
+          </li>
         
           <li>
             <a href="/2018/06/17/基于原生javascript的懒加载/">基于原生javascript的懒加载</a>

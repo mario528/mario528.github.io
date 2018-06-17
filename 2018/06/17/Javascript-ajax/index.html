@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>原生Javascript-ajax | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基本知识点XMLHttpRequest对象 MSXML2.XMLHTTPMSXML2.XMLHTTP.3.0MSXML2.XMLHTTP.6.0123456789101112131415function createXHR()&amp;#123;    if (typeof arguments.callee.activeXString != &amp;quot;string&amp;quot;)&amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生Javascript-ajax">
+<meta property="og:url" content="http://yoursite.com/2018/06/17/Javascript-ajax/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本知识点XMLHttpRequest对象 MSXML2.XMLHTTPMSXML2.XMLHTTP.3.0MSXML2.XMLHTTP.6.0123456789101112131415function createXHR()&amp;#123;    if (typeof arguments.callee.activeXString != &amp;quot;string&amp;quot;)&amp;#123;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-17T14:35:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="原生Javascript-ajax">
+<meta name="twitter:description" content="基本知识点XMLHttpRequest对象 MSXML2.XMLHTTPMSXML2.XMLHTTP.3.0MSXML2.XMLHTTP.6.0123456789101112131415function createXHR()&amp;#123;    if (typeof arguments.callee.activeXString != &amp;quot;string&amp;quot;)&amp;#123;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Javascript-ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/17/Javascript-ajax/" class="article-date">
+  <time datetime="2018-06-17T14:28:04.000Z" itemprop="datePublished">2018-06-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      原生Javascript-ajax
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本知识点"><a href="#基本知识点" class="headerlink" title="基本知识点"></a>基本知识点</h2><h3 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h3><blockquote>
+<p>MSXML2.XMLHTTP<br>MSXML2.XMLHTTP.3.0<br>MSXML2.XMLHTTP.6.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function createXHR()&#123;</span><br><span class="line">    if (typeof arguments.callee.activeXString != &quot;string&quot;)&#123;</span><br><span class="line">            var versions = [&quot;MSXML2.XMLHttp.6.0&quot;, &quot;MSXML2.XMLHttp.3.0&quot;,</span><br><span class="line">                            &quot;MSXML2.XMLHttp&quot;],</span><br><span class="line">    i, len;</span><br><span class="line">    for (i=0,len=versions.length; i &lt; len; i++)&#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                    new ActiveXObject(versions[i]);</span><br><span class="line">                    arguments.callee.activeXString = versions[i];</span><br><span class="line">                    break;</span><br><span class="line">                    &#125; catch (ex)&#123; //</span><br><span class="line">                    &#125; &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">    return new ActiveXObject(arguments.callee.activeXString);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/17/Javascript-ajax/" data-id="cjiixo8540000v8yvy387nhhi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/17/基于原生javascript的懒加载/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">基于原生javascript的懒加载</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/06/17/Javascript-ajax/">原生Javascript-ajax</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/17/基于原生javascript的懒加载/">基于原生javascript的懒加载</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/13/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
