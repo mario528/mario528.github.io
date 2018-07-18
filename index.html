@@ -232,6 +232,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/18/canvas实现验证码/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马加奥">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/guoanbizhi.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="马加奥个人技术主页">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/18/canvas实现验证码/" itemprop="url">canvas实现验证码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-18T21:59:43+08:00">
+                2018-07-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="闲暇做了一个利用canvas实现验证码的功能"><a href="#闲暇做了一个利用canvas实现验证码的功能" class="headerlink" title="闲暇做了一个利用canvas实现验证码的功能"></a>闲暇做了一个利用canvas实现验证码的功能</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//生成验证码字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> char=<span class="string">""</span>;</span><br><span class="line">    <span class="keyword">let</span> longth=num;</span><br><span class="line">    <span class="keyword">let</span> temp=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">0</span>,<span class="string">"Q"</span>,<span class="string">"W"</span>,<span class="string">"E"</span>,<span class="string">"R"</span>,<span class="string">"T"</span>,<span class="string">"Y"</span>,<span class="string">"U"</span>,<span class="string">"I"</span>,<span class="string">"O"</span>,<span class="string">"P"</span>,<span class="string">"A"</span>,<span class="string">"S"</span>,<span class="string">"D"</span>,<span class="string">"F"</span>,<span class="string">"G"</span>,</span><br><span class="line">    <span class="string">"H"</span>,<span class="string">"J"</span>,<span class="string">"K"</span>,<span class="string">"L"</span>,<span class="string">"Z"</span>,<span class="string">"X"</span>,<span class="string">"C"</span>,<span class="string">"V"</span>,<span class="string">"B"</span>,<span class="string">"N"</span>,<span class="string">"M"</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;longth;i++)&#123;</span><br><span class="line">    <span class="keyword">let</span> suijinum=temp[<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random()*<span class="number">36</span>)];</span><br><span class="line">    char+=suijinum;</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">return</span> char;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//作图</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">writeCanvas</span>(<span class="params">charString</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> yanzhengma=<span class="built_in">document</span>.getElementById(<span class="string">"yanzhengma"</span>);</span><br><span class="line">    <span class="keyword">if</span>(yanzhengma.getContext)&#123;</span><br><span class="line">        <span class="keyword">let</span> context=yanzhengma.getContext(<span class="string">'2d'</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=<span class="built_in">Math</span>.random()*<span class="number">99</span>;</span><br><span class="line">        <span class="keyword">let</span> y=<span class="built_in">Math</span>.random()*<span class="number">39</span>;</span><br><span class="line">        <span class="keyword">let</span> x1=<span class="built_in">Math</span>.random()*<span class="number">100</span>;</span><br><span class="line">        <span class="keyword">let</span> y1=<span class="built_in">Math</span>.random()*<span class="number">40</span>;</span><br><span class="line">        context.strokeStyle=<span class="string">"#097654"</span>;</span><br><span class="line">        context.beginPath();</span><br><span class="line">        context.moveTo(x,y);</span><br><span class="line">        context.lineTo(x1,y1);</span><br><span class="line">        context.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="number">60</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x3=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">99</span>);</span><br><span class="line">        <span class="keyword">let</span> y3=<span class="built_in">Math</span>.ceil(<span class="built_in">Math</span>.random()*<span class="number">39</span>);</span><br><span class="line">        context.strokeStyle=<span class="string">"#789852"</span>;</span><br><span class="line">        context.beginPath();</span><br><span class="line">        context.arc(x3,y3,<span class="number">1</span>,<span class="number">0</span>,<span class="number">2</span>*<span class="built_in">Math</span>.PI,<span class="literal">false</span>);</span><br><span class="line">        context.stroke();</span><br><span class="line">    &#125;</span><br><span class="line">    context.font=<span class="string">"bold 30px Arial"</span>;</span><br><span class="line">    context.textAlign=<span class="string">"center"</span>;</span><br><span class="line">    context.textBaseline=<span class="string">"middle"</span>;</span><br><span class="line">    context.fillStyle=<span class="string">"#465393"</span>;</span><br><span class="line">    context.fillText(charString,<span class="number">50</span>,<span class="number">20</span>);</span><br><span class="line"> &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    yanzhengma.innerHTML=<span class="string">"&lt;a&gt;抱歉，您的浏览器版本过低&lt;/a&gt;"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//加载</span></span><br><span class="line"><span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> char=create(<span class="number">4</span>);</span><br><span class="line">    writeCanvas(char);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//点击切换事件</span></span><br><span class="line"><span class="keyword">var</span> mu=<span class="built_in">document</span>.getElementById(<span class="string">"yanzhengma"</span>);</span><br><span class="line">mu.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> yanzhengma=<span class="built_in">document</span>.getElementById(<span class="string">"yanzhengma"</span>);</span><br><span class="line">    <span class="keyword">let</span> context=yanzhengma.getContext(<span class="string">'2d'</span>);</span><br><span class="line">    context.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">40</span>);</span><br><span class="line">    <span class="keyword">let</span> char=create(<span class="number">4</span>);</span><br><span class="line">    writeCanvas(char);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//验证</span></span><br><span class="line"><span class="keyword">var</span> inner=<span class="built_in">document</span>.getElementById(<span class="string">"inner"</span>);</span><br><span class="line"><span class="keyword">var</span> yanzheng=<span class="built_in">document</span>.getElementById(<span class="string">"post"</span>);</span><br><span class="line">yanzheng.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span>(inner.value==char)&#123;</span><br><span class="line">    alert(<span class="string">"成功"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">"失败"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1138,7 +1258,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
