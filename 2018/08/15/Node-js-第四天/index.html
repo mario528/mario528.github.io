@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="知识点：1&amp;lt;canvas id=&quot;drawing&quot; width=&quot; 200&quot; height=&quot;200&quot;&amp;gt;A drawing of something.&amp;lt;/canvas&amp;gt;  需要注意不能使用内联定义canvas宽高 12//获得canvasdom对象var drawing = document.getElementById(&amp;quot;drawing&amp;quot;); 描边和填">
+<meta name="description" content="AJAX在node.js中的使用NoSQL定义非结构型数据库，没有行和列的概念，用JSON来存储数据。集合就相当于“表”，文档就相当于行。文档就是JSON，上下文语境中，也是JavaScript范畴，所以我们的MongoDB也是JS范畴的东西。 适用情况1：数据类型比较简单2：需要灵活性更强的IT系统3：对数据库性能要求比较高4：不需要高度的数据一致性5：对于给定key，比较容易映射复杂值的环境">
 <meta property="og:type" content="article">
-<meta property="og:title" content="canvas绘图">
-<meta property="og:url" content="http://yoursite.com/2018/06/20/canvas绘图/index.html">
+<meta property="og:title" content="Node.js-第四天">
+<meta property="og:url" content="http://yoursite.com/2018/08/15/Node-js-第四天/index.html">
 <meta property="og:site_name" content="马加奥个人技术主页">
-<meta property="og:description" content="知识点：1&amp;lt;canvas id=&quot;drawing&quot; width=&quot; 200&quot; height=&quot;200&quot;&amp;gt;A drawing of something.&amp;lt;/canvas&amp;gt;  需要注意不能使用内联定义canvas宽高 12//获得canvasdom对象var drawing = document.getElementById(&amp;quot;drawing&amp;quot;); 描边和填">
+<meta property="og:description" content="AJAX在node.js中的使用NoSQL定义非结构型数据库，没有行和列的概念，用JSON来存储数据。集合就相当于“表”，文档就相当于行。文档就是JSON，上下文语境中，也是JavaScript范畴，所以我们的MongoDB也是JS范畴的东西。 适用情况1：数据类型比较简单2：需要灵活性更强的IT系统3：对数据库性能要求比较高4：不需要高度的数据一致性5：对于给定key，比较容易映射复杂值的环境">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/06/20/canvas绘图/知识点.png">
-<meta property="og:updated_time" content="2018-06-19T16:54:21.000Z">
+<meta property="og:updated_time" content="2018-08-28T16:53:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="canvas绘图">
-<meta name="twitter:description" content="知识点：1&amp;lt;canvas id=&quot;drawing&quot; width=&quot; 200&quot; height=&quot;200&quot;&amp;gt;A drawing of something.&amp;lt;/canvas&amp;gt;  需要注意不能使用内联定义canvas宽高 12//获得canvasdom对象var drawing = document.getElementById(&amp;quot;drawing&amp;quot;); 描边和填">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/20/canvas绘图/知识点.png">
+<meta name="twitter:title" content="Node.js-第四天">
+<meta name="twitter:description" content="AJAX在node.js中的使用NoSQL定义非结构型数据库，没有行和列的概念，用JSON来存储数据。集合就相当于“表”，文档就相当于行。文档就是JSON，上下文语境中，也是JavaScript范畴，所以我们的MongoDB也是JS范畴的东西。 适用情况1：数据类型比较简单2：需要灵活性更强的IT系统3：对数据库性能要求比较高4：不需要高度的数据一致性5：对于给定key，比较容易映射复杂值的环境">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/20/canvas绘图/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/15/Node-js-第四天/"/>
 
 
 
 
 
-  <title>canvas绘图 | 马加奥个人技术主页</title>
+  <title>Node.js-第四天 | 马加奥个人技术主页</title>
   
 
 
@@ -234,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/canvas绘图/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/Node-js-第四天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马加奥">
@@ -251,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">canvas绘图</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js-第四天</h1>
         
 
         <div class="post-meta">
@@ -263,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T00:31:52+08:00">
-                2018-06-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-15T19:15:27+08:00">
+                2018-08-15
               </time>
             
 
@@ -301,12 +299,13 @@
       
 
       
-        <h1 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"drawing"</span> <span class="attr">width</span>=<span class="string">" 200"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span>A drawing of something.<span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong><em> 需要注意不能使用内联定义canvas宽高 </em></strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//获得canvasdom对象</span><br><span class="line">var drawing = document.getElementById(&quot;drawing&quot;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="描边和填充"><a href="#描边和填充" class="headerlink" title="描边和填充"></a>描边和填充</h3><p>fillRect和strokeRect</p>
-<h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><p><img src="/2018/06/20/canvas绘图/知识点.png" alt="知识点"><br><a id="more"></a></p>
-<p>###具体代码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var drawing=document.getElementById(&quot;drawing&quot;);</span><br><span class="line">if(drawing.getContext)&#123;</span><br><span class="line">    context=drawing.getContext(&apos;2d&apos;);</span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.arc(250,250,200,0,2*Math.PI,false);</span><br><span class="line">    context.moveTo(445,250);</span><br><span class="line">    context.arc(250,250,195,0,2*Math.PI,false);</span><br><span class="line">    context.moveTo(250,250);</span><br><span class="line">    context.lineTo(250,100);</span><br><span class="line">    context.moveTo(250,250);</span><br><span class="line">    context.lineTo(420,250);</span><br><span class="line">    context.font=&quot;bold 14px Arial&quot;;</span><br><span class="line">    context.textAlign=&quot;center&quot;;</span><br><span class="line">    context.fillText(&quot;12&quot;,250,70);</span><br><span class="line">    context.fillText(&quot;3&quot;,430,250);</span><br><span class="line">    context.fillText(&quot;6&quot;,250,440);</span><br><span class="line">    context.fillText(&quot;3&quot;,70,250);</span><br><span class="line">    context.stroke();</span><br><span class="line">    var image=document.createElement(&apos;img&apos;);</span><br><span class="line">    imageURl=drawing.toDataURL(&quot;image&quot;);</span><br><span class="line">    image.src=imageURl;</span><br><span class="line">    document.body.appendChild(image);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">        &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">            #drawing&#123;</span><br><span class="line">            background-color: yellowgreen;</span><br><span class="line">            &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;canvas id=&quot;drawing&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/canvas&gt;</span><br><span class="line">        &lt;script src=&quot;canvas_js.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        <h2 id="AJAX在node-js中的使用"><a href="#AJAX在node-js中的使用" class="headerlink" title="AJAX在node.js中的使用"></a>AJAX在node.js中的使用</h2><h2 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>非结构型数据库，没有行和列的概念，用JSON来存储数据。集合就相当于“表”，文档就相当于行。文档就是JSON，上下文语境中，也是JavaScript范畴，所以我们的MongoDB也是JS范畴的东西。</p>
+<h3 id="适用情况"><a href="#适用情况" class="headerlink" title="适用情况"></a>适用情况</h3><p>1：数据类型比较简单<br>2：需要灵活性更强的IT系统<br>3：对数据库性能要求比较高<br>4：不需要高度的数据一致性<br>5：对于给定key，比较容易映射复杂值的环境<br><a id="more"></a></p>
+<h2 id="MongoDB—文档型数据库"><a href="#MongoDB—文档型数据库" class="headerlink" title="MongoDB—文档型数据库"></a>MongoDB—文档型数据库</h2><h3 id="MongoDB的安装"><a href="#MongoDB的安装" class="headerlink" title="MongoDB的安装"></a>MongoDB的安装</h3><p>因为我电脑的系统是Mac OS，所以安装很简单。通过brew安装即可。安装成功后，在根目录创建data/db用来存储数据库文档，调节目录读写权限后，在终端运行mongod命令，然后另开终端输入mongo，MongoDB即已经运行。</p>
+<h3 id="MongoDB的一些基本命令"><a href="#MongoDB的一些基本命令" class="headerlink" title="MongoDB的一些基本命令"></a>MongoDB的一些基本命令</h3><p>1：列出所有数据库<br><figure class="highlight plain"><figcaption><span>dbs```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2：使用某个数据库，或者创建一个新（当前不存在）的数据库</span><br><span class="line">``` use ma</span><br></pre></td></tr></table></figure></p>
+<p>3：查看当前所在数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4：在MongoDB，集合中存储着很多的json。若db.一个未知的集合名字，那么这个集合将自动创建,下面是实例。</span><br><span class="line">``` db.student.insert(&#123;&quot;name&quot;:&quot;mario&quot;,&quot;sex&quot;:&quot;man&quot;,&quot;Nationality&quot;:&quot;Chinese&quot;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>5：列出当前所有集合<br><figure class="highlight plain"><figcaption><span>collections```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6：查看集合中的所有语句</span><br><span class="line">``` db.student.find()</span><br></pre></td></tr></table></figure></p>
+<h2 id="Dao层的封装"><a href="#Dao层的封装" class="headerlink" title="Dao层的封装"></a>Dao层的封装</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>DAO(Data Access Object) 数据访问对象是一个面向对象的数据库接口，是开发者与数据库之间的一个中介，是一个数据访问接口。使程序员更专注的开发上层代码。</p>
 
       
     </div>
@@ -331,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/17/Javascript-ajax/" rel="next" title="原生Javascript-ajax">
-                <i class="fa fa-chevron-left"></i> 原生Javascript-ajax
+              <a href="/2018/08/14/nodejs-第三天/" rel="next" title="nodejs-第三天">
+                <i class="fa fa-chevron-left"></i> nodejs-第三天
               </a>
             
           </div>
@@ -340,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/24/todolist/" rel="prev" title="todolist">
-                todolist <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,7 +456,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识点："><span class="nav-number">1.</span> <span class="nav-text">知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#描边和填充"><span class="nav-number">1.0.1.</span> <span class="nav-text">描边和填充</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制路径"><span class="nav-number">1.0.2.</span> <span class="nav-text">绘制路径</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX在node-js中的使用"><span class="nav-number">1.</span> <span class="nav-text">AJAX在node.js中的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NoSQL"><span class="nav-number">2.</span> <span class="nav-text">NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用情况"><span class="nav-number">2.2.</span> <span class="nav-text">适用情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MongoDB—文档型数据库"><span class="nav-number">3.</span> <span class="nav-text">MongoDB—文档型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB的安装"><span class="nav-number">3.1.</span> <span class="nav-text">MongoDB的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB的一些基本命令"><span class="nav-number">3.2.</span> <span class="nav-text">MongoDB的一些基本命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dao层的封装"><span class="nav-number">4.</span> <span class="nav-text">Dao层的封装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义-1"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a></li></ol></li></ol></div>
             
 
           </div>
