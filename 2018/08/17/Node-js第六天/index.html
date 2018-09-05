@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##闲暇利用html5新的API-localStorage（局部存储器写了一个todolist)demo:www.majiaao.xyz/todolist/">
+<meta name="description" content="复习cookiecookie是在res中设置，req中读取的。第一次访问是没有cookie的cookie的存储大小有限，K-V对。对用户可见，用户可以进行禁用，清楚cookie，可以被篡改。 SessionSession就是利用cookie，实现的对话。就是在第一次访问时，可以在服务器上为这个用户缓存一些信息，别的用户是不会看到这个用户的信息。服务器会下发一个秘钥，客户端每一次访问都会携带这个秘钥">
 <meta property="og:type" content="article">
-<meta property="og:title" content="todolist">
-<meta property="og:url" content="http://yoursite.com/2018/06/24/todolist/index.html">
+<meta property="og:title" content="Node.js第六天">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/Node-js第六天/index.html">
 <meta property="og:site_name" content="马加奥个人技术主页">
-<meta property="og:description" content="##闲暇利用html5新的API-localStorage（局部存储器写了一个todolist)demo:www.majiaao.xyz/todolist/">
+<meta property="og:description" content="复习cookiecookie是在res中设置，req中读取的。第一次访问是没有cookie的cookie的存储大小有限，K-V对。对用户可见，用户可以进行禁用，清楚cookie，可以被篡改。 SessionSession就是利用cookie，实现的对话。就是在第一次访问时，可以在服务器上为这个用户缓存一些信息，别的用户是不会看到这个用户的信息。服务器会下发一个秘钥，客户端每一次访问都会携带这个秘钥">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-24T12:50:17.000Z">
+<meta property="og:updated_time" content="2018-09-01T18:32:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="todolist">
-<meta name="twitter:description" content="##闲暇利用html5新的API-localStorage（局部存储器写了一个todolist)demo:www.majiaao.xyz/todolist/">
+<meta name="twitter:title" content="Node.js第六天">
+<meta name="twitter:description" content="复习cookiecookie是在res中设置，req中读取的。第一次访问是没有cookie的cookie的存储大小有限，K-V对。对用户可见，用户可以进行禁用，清楚cookie，可以被篡改。 SessionSession就是利用cookie，实现的对话。就是在第一次访问时，可以在服务器上为这个用户缓存一些信息，别的用户是不会看到这个用户的信息。服务器会下发一个秘钥，客户端每一次访问都会携带这个秘钥">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/24/todolist/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/17/Node-js第六天/"/>
 
 
 
 
 
-  <title>todolist | 马加奥个人技术主页</title>
+  <title>Node.js第六天 | 马加奥个人技术主页</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/24/todolist/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/Node-js第六天/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马加奥">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">todolist</h1>
+          <h1 class="post-title" itemprop="name headline">Node.js第六天</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-24T20:30:20+08:00">
-                2018-06-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-17T23:45:21+08:00">
+                2018-08-17
               </time>
             
 
@@ -299,7 +299,11 @@
       
 
       
-        <p>##闲暇利用html5新的API-localStorage（局部存储器写了一个todolist)<br>demo:<a href="http://www.majiaao.xyz/todolist/" target="_blank" rel="noopener">www.majiaao.xyz/todolist/</a></p>
+        <h2 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h2><h3 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h3><p>cookie是在res中设置，req中读取的。第一次访问是没有cookie的<br>cookie的存储大小有限，K-V对。对用户可见，用户可以进行禁用，清楚cookie，可以被篡改。</p>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>Session就是利用cookie，实现的对话。就是在第一次访问时，可以在服务器上为这个用户缓存一些信息，别的用户是不会看到这个用户的信息。服务器会下发一个秘钥，客户端每一次访问都会携带这个秘钥，服务器端如果发现和这个秘钥吻合，就能显示这个用户曾经保存的信息。</p>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><p>永远不要用明码写密码。MD5加密是函数型加密，就是每次加密的结果一定相同，没有随机位。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>不管加密的文字，多长多短，永远是32位英语字母和数字混合。<br>MD5没有反破解函数。</p>
+<h3 id="MD5在Node中的应用"><a href="#MD5在Node中的应用" class="headerlink" title="MD5在Node中的应用"></a>MD5在Node中的应用</h3><p>node中自带了一个模块，叫做crypto，负责加密。<br>首先创建md5对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var crypto=require(&apos;crypto&apos;);</span><br><span class="line">var md5=crypto.createHash(&apos;md5&apos;);</span><br><span class="line">var psw=md5.update(&quot;123&quot;).digest(&apos;base64&apos;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -324,8 +328,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/20/canvas绘图/" rel="next" title="canvas绘图">
-                <i class="fa fa-chevron-left"></i> canvas绘图
+              <a href="/2018/08/16/Node-js学习-第五天/" rel="next" title="Node.js学习-第五天">
+                <i class="fa fa-chevron-left"></i> Node.js学习-第五天
               </a>
             
           </div>
@@ -334,8 +338,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/12/javascript读取json/" rel="prev" title="javascript读取json">
-                javascript读取json <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/25/从回调函数到-Promises-再到-Async-Await/" rel="prev" title="从回调函数到 Promises 再到 Async/Await">
+                从回调函数到 Promises 再到 Async/Await <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -388,8 +392,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -435,6 +448,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#复习"><span class="nav-number">1.</span> <span class="nav-text">复习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">1.1.</span> <span class="nav-text">cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">1.2.</span> <span class="nav-text">Session</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加密"><span class="nav-number">2.</span> <span class="nav-text">加密</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">2.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MD5在Node中的应用"><span class="nav-number">2.2.</span> <span class="nav-text">MD5在Node中的应用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
