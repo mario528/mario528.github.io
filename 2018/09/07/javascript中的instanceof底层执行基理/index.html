@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="TypeError: db.collection is not a function掉坑最近在学习node连接MongoDB数据库，刚开始，我的代码是这样的。12345678910111213141516171819var MongoClient=require(&amp;apos;mongodb&amp;apos;).MongoClient;var express=require(&amp;apos;express&amp;a">
+<meta name="description" content="今天，翻了翻红宝书，想了想instanceof的底层实现办法，感觉对于该知识点和原型链的理解还是很有用的。 API-&amp;gt;instanceof()在 JavaScript 中，判断一个变量的类型尝尝会用 typeof 运算符，在使用 typeof 运算符时采用引用类型存储值会出现一个问题，无论引用的是什么类型的对象，它都返回 “object”。ECMAScript 引入了另一个 Java 运算符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node连接MongoDB爬坑">
-<meta property="og:url" content="http://yoursite.com/2018/08/30/Node连接MongoDB爬坑/index.html">
+<meta property="og:title" content="javascript中的instanceof底层执行基理">
+<meta property="og:url" content="http://yoursite.com/2018/09/07/javascript中的instanceof底层执行基理/index.html">
 <meta property="og:site_name" content="马加奥个人技术主页">
-<meta property="og:description" content="TypeError: db.collection is not a function掉坑最近在学习node连接MongoDB数据库，刚开始，我的代码是这样的。12345678910111213141516171819var MongoClient=require(&amp;apos;mongodb&amp;apos;).MongoClient;var express=require(&amp;apos;express&amp;a">
+<meta property="og:description" content="今天，翻了翻红宝书，想了想instanceof的底层实现办法，感觉对于该知识点和原型链的理解还是很有用的。 API-&amp;gt;instanceof()在 JavaScript 中，判断一个变量的类型尝尝会用 typeof 运算符，在使用 typeof 运算符时采用引用类型存储值会出现一个问题，无论引用的是什么类型的对象，它都返回 “object”。ECMAScript 引入了另一个 Java 运算符">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-30T10:59:58.000Z">
+<meta property="og:updated_time" content="2018-09-07T15:37:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node连接MongoDB爬坑">
-<meta name="twitter:description" content="TypeError: db.collection is not a function掉坑最近在学习node连接MongoDB数据库，刚开始，我的代码是这样的。12345678910111213141516171819var MongoClient=require(&amp;apos;mongodb&amp;apos;).MongoClient;var express=require(&amp;apos;express&amp;a">
+<meta name="twitter:title" content="javascript中的instanceof底层执行基理">
+<meta name="twitter:description" content="今天，翻了翻红宝书，想了想instanceof的底层实现办法，感觉对于该知识点和原型链的理解还是很有用的。 API-&amp;gt;instanceof()在 JavaScript 中，判断一个变量的类型尝尝会用 typeof 运算符，在使用 typeof 运算符时采用引用类型存储值会出现一个问题，无论引用的是什么类型的对象，它都返回 “object”。ECMAScript 引入了另一个 Java 运算符">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/30/Node连接MongoDB爬坑/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/07/javascript中的instanceof底层执行基理/"/>
 
 
 
 
 
-  <title>Node连接MongoDB爬坑 | 马加奥个人技术主页</title>
+  <title>javascript中的instanceof底层执行基理 | 马加奥个人技术主页</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/Node连接MongoDB爬坑/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/javascript中的instanceof底层执行基理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马加奥">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Node连接MongoDB爬坑</h1>
+          <h1 class="post-title" itemprop="name headline">javascript中的instanceof底层执行基理</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-30T18:47:59+08:00">
-                2018-08-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-07T23:18:06+08:00">
+                2018-09-07
               </time>
             
 
@@ -299,11 +299,11 @@
       
 
       
-        <h1 id="TypeError-db-collection-is-not-a-function"><a href="#TypeError-db-collection-is-not-a-function" class="headerlink" title="TypeError: db.collection is not a function"></a>TypeError: db.collection is not a function</h1><h2 id="掉坑"><a href="#掉坑" class="headerlink" title="掉坑"></a>掉坑</h2><p>最近在学习node连接MongoDB数据库，刚开始，我的代码是这样的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var MongoClient=require(&apos;mongodb&apos;).MongoClient;</span><br><span class="line">var express=require(&apos;express&apos;);</span><br><span class="line">var app=express();</span><br><span class="line">app.get(&quot;/&quot;,function (req,res) &#123;</span><br><span class="line">    var url=&quot;mongodb://localhost:27017/ma&quot;;</span><br><span class="line">    MongoClient.connect(url,function(err,db) &#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            console.log(&quot;连接失败&quot;);</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">    console.log(&quot;连接成功&quot;);</span><br><span class="line">    db.collection(&apos;student&apos;).insertOne(&#123;</span><br><span class="line">        &quot;name&quot;:&quot;mario&quot;</span><br><span class="line">    &#125;,function (err,result) &#123;</span><br><span class="line">        res.end(result.toLocaleString());</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line">app.listen(3000);</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>在运行后，发现bug，错误如下<br>TypeError: db.collection is not a function<br>在查阅资料后，发现mongodb在从2.x.x过渡到3.x.x后，API已经有了很大的变化。我们npm安装的是mongodb的最新版本，因此报错。</p>
-<h2 id="爬坑"><a href="#爬坑" class="headerlink" title="爬坑"></a>爬坑</h2><h3 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h3><p>将mongodb的版本回溯到版本2 改变package.json中依赖即可。</p>
-<h3 id="推荐-方法2"><a href="#推荐-方法2" class="headerlink" title="推荐-方法2"></a>推荐-方法2</h3><p>使用新的API 代码示例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var MongoClient=require(&apos;mongodb&apos;).MongoClient;</span><br><span class="line">var express=require(&apos;express&apos;);</span><br><span class="line">var app=express();</span><br><span class="line">app.get(&quot;/&quot;,function (req,res) &#123;</span><br><span class="line">var url=&quot;mongodb://localhost:27017/ma&quot;;</span><br><span class="line">MongoClient.connect(url,&#123; useNewUrlParser: true &#125;,function(err,client) &#123;</span><br><span class="line">    if(err)&#123;</span><br><span class="line">    console.log(&quot;连接失败&quot;);</span><br><span class="line">    return;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(&quot;连接成功&quot;);</span><br><span class="line">    var db=client.db(&apos;ma&apos;);</span><br><span class="line">    db.collection(&apos;student&apos;).insertOne(&#123;</span><br><span class="line">        &quot;name&quot;:&quot;mario&quot;</span><br><span class="line">    &#125;,function (err,result) &#123;</span><br><span class="line">    res.end(result.toLocaleString());</span><br><span class="line">    &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line">app.listen(3000);</span><br></pre></td></tr></table></figure></p>
+        <p>今天，翻了翻红宝书，想了想instanceof的底层实现办法，感觉对于该知识点和原型链的理解还是很有用的。</p>
+<h2 id="API-gt-instanceof"><a href="#API-gt-instanceof" class="headerlink" title="API-&gt;instanceof()"></a>API-&gt;instanceof()</h2><p>在 JavaScript 中，判断一个变量的类型尝尝会用 typeof 运算符，在使用 typeof 运算符时采用引用类型存储值会出现一个问题，无论引用的是什么类型的对象，它都返回 “object”。ECMAScript 引入了另一个 Java 运算符 instanceof 来解决这个问题。instanceof 运算符与 typeof 运算符相似，用于识别正在处理的对象的类型。与 typeof 方法不同的是，instanceof 方法要求开发者明确地确认对象为某特定类型。</p>
+<h2 id="功能实现"><a href="#功能实现" class="headerlink" title="功能实现"></a>功能实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function try_study_instanceof(father,son) &#123;</span><br><span class="line">    var fathers_prototype=father.prototype;</span><br><span class="line">    son=son.__proto__;</span><br><span class="line">    while(true)&#123;</span><br><span class="line">        if(fathers_prototype==son)&#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        if(son==null)&#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        son=son.__proto__;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>try_study_instanceof这个函数接收两个参数，一个构造函数：father，一个待测对象：son。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>思想就是遍历待测对象的原型对象中，是否有构造函数的原型对象。如果没有，但待测对象的实力对象不为空，则继续遍历。</p>
 
       
     </div>
@@ -328,8 +328,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/25/从回调函数到-Promises-再到-Async-Await/" rel="next" title="从回调函数到 Promises 再到 Async/Await">
-                <i class="fa fa-chevron-left"></i> 从回调函数到 Promises 再到 Async/Await
+              <a href="/2018/09/04/WebSocket/" rel="next" title="WebSocket">
+                <i class="fa fa-chevron-left"></i> WebSocket
               </a>
             
           </div>
@@ -337,10 +337,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/04/WebSocket/" rel="prev" title="WebSocket">
-                WebSocket <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -458,7 +454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#TypeError-db-collection-is-not-a-function"><span class="nav-number">1.</span> <span class="nav-text">TypeError: db.collection is not a function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#掉坑"><span class="nav-number">1.1.</span> <span class="nav-text">掉坑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬坑"><span class="nav-number">1.2.</span> <span class="nav-text">爬坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1"><span class="nav-number">1.2.1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐-方法2"><span class="nav-number">1.2.2.</span> <span class="nav-text">推荐-方法2</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#API-gt-instanceof"><span class="nav-number">1.</span> <span class="nav-text">API-&gt;instanceof()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能实现"><span class="nav-number">2.</span> <span class="nav-text">功能实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想"><span class="nav-number">3.</span> <span class="nav-text">基本思想</span></a></li></ol></div>
             
 
           </div>
