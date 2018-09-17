@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo" />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -237,7 +237,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马加奥">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/guoanbizhi.jpg">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -366,6 +366,9 @@
           
 
   
+   <div id="gitalk-container">
+   </div>
+  
 
 
 
@@ -401,10 +404,6 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/guoanbizhi.jpg"
-                alt="马加奥" />
             
               <p class="site-author-name" itemprop="name">马加奥</p>
               <p class="site-description motion-element" itemprop="description">一个程序猿的进击之旅</p>
@@ -642,6 +641,23 @@
 
 
 
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: 'a2cad3f916afbab57692',
+          clientSecret: '4f433cf6842bbe3706f5e8ba19a5bb4c4f6b3e56',
+          repo: 'mario528.github.io',
+          owner: 'mario528@163.com',
+          admin: ['mario528@163.com'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
 
