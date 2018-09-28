@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -79,19 +79,18 @@
 
 
 
-<meta name="description" content="知识点window.innerHeight 浏览器可视高度document.body.offsetTop,document.documentElement.scrollTop 浏览器滚动条滚过的高度如果图片距离页面顶端距离offsetTop小于浏览器可视高度+页面向上滚动过的高度，说明该元素进入了可视范围，则进行操作">
+<meta name="description" content="最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧弹性布局算了，先去看jq源码去了。有空再回来写">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于原生javascript的懒加载">
-<meta property="og:url" content="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/index.html">
+<meta property="og:title" content="css3弹性布局">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/css3弹性布局/index.html">
 <meta property="og:site_name" content="马加奥个人技术主页">
-<meta property="og:description" content="知识点window.innerHeight 浏览器可视高度document.body.offsetTop,document.documentElement.scrollTop 浏览器滚动条滚过的高度如果图片距离页面顶端距离offsetTop小于浏览器可视高度+页面向上滚动过的高度，说明该元素进入了可视范围，则进行操作">
+<meta property="og:description" content="最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧弹性布局算了，先去看jq源码去了。有空再回来写">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/tro.png">
-<meta property="og:updated_time" content="2018-06-18T11:43:24.000Z">
+<meta property="og:updated_time" content="2018-09-28T15:02:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于原生javascript的懒加载">
-<meta name="twitter:description" content="知识点window.innerHeight 浏览器可视高度document.body.offsetTop,document.documentElement.scrollTop 浏览器滚动条滚过的高度如果图片距离页面顶端距离offsetTop小于浏览器可视高度+页面向上滚动过的高度，说明该元素进入了可视范围，则进行操作">
-<meta name="twitter:image" content="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/tro.png">
+<meta name="twitter:title" content="css3弹性布局">
+<meta name="twitter:description" content="最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧弹性布局算了，先去看jq源码去了。有空再回来写">
 
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/28/css3弹性布局/"/>
 
 
 
 
 
-  <title>基于原生javascript的懒加载 | 马加奥个人技术主页</title>
+  <title>css3弹性布局 | 马加奥个人技术主页</title>
   
 
 
@@ -254,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/17/基于原生javascript的懒加载/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/css3弹性布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马加奥">
@@ -271,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于原生javascript的懒加载</h1>
+          <h1 class="post-title" itemprop="name headline">css3弹性布局</h1>
         
 
         <div class="post-meta">
@@ -283,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-17T02:19:08+08:00">
-                2018-06-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-28T21:52:08+08:00">
+                2018-09-28
               </time>
             
 
@@ -321,9 +320,7 @@
       
 
       
-        <h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p><strong>window.innerHeight</strong> 浏览器可视高度<br><strong>document.body.offsetTop,document.documentElement.scrollTop</strong> 浏览器滚动条滚过的高度<br><strong>如果图片距离页面顶端距离offsetTop小于浏览器可视高度+页面向上滚动过的高度，说明该元素进入了可视范围，则进行操作</strong><br><img src="/2018/06/17/基于原生javascript的懒加载/tro.png" alt="原理图"></p>
-<a id="more"></a>
-<h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h2> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">&lt;title&gt;Title&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">&lt;style&gt;</span></span><br><span class="line"><span class="regexp">img&#123;</span></span><br><span class="line"><span class="regexp">height: 400px;</span></span><br><span class="line"><span class="regexp">width: 400px;</span></span><br><span class="line"><span class="regexp">display: block;</span></span><br><span class="line"><span class="regexp">margin-top: 10px;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;img src="img/</span>loading.jpg<span class="string">" data-src="</span>img/guoan.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/changchun.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/fuli.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/henan.jpeg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/hengda.jpeg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/huaxiaxingfu.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/liaoning.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/luneng.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/shanggang.jpeg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/shenhua.jpeg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/suning.jpg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;img src="</span>img/loading.jpg<span class="string">" data-src="</span>img/taida.jpeg<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">var allImg = document.querySelectorAll('img');</span></span><br><span class="line"><span class="string">var len =allImg.length;</span></span><br><span class="line"><span class="string">var n = 0;//记录图片现在加载到的位置</span></span><br><span class="line"><span class="string">window.onscroll=function ()&#123;</span></span><br><span class="line"><span class="string">    var seeHeight = window.innerHeight;//浏览器可视高度</span></span><br><span class="line"><span class="string">    var scorllTop=document.body.offsetTop||document.documentElement.scrollTop;//浏览器滚动条滚过的高度</span></span><br><span class="line"><span class="string">    for(i=n;i&lt;len;i++)&#123;</span></span><br><span class="line"><span class="string">        if(allImg[i].offsetTop&lt;seeHeight+scorllTop)&#123;</span></span><br><span class="line"><span class="string">        if(allImg[i].getAttribute("</span>src<span class="string">")=='img/loading.jpg')&#123;</span></span><br><span class="line"><span class="string">            allImg[i].src=allImg[i].getAttribute("</span>data-src<span class="string">");</span></span><br><span class="line"><span class="string">          &#125;</span></span><br><span class="line"><span class="string">        n=i+1;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+        <h3 id="最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧"><a href="#最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧" class="headerlink" title="最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧"></a>最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧</h3><h2 id="弹性布局"><a href="#弹性布局" class="headerlink" title="弹性布局"></a>弹性布局</h2><p>算了，先去看jq源码去了。有空再回来写</p>
 
       
     </div>
@@ -339,6 +336,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
 
       
       
@@ -348,8 +351,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/13/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/09/28/ESlint爬坑/" rel="next" title="ESlint爬坑">
+                <i class="fa fa-chevron-left"></i> ESlint爬坑
               </a>
             
           </div>
@@ -357,10 +360,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/17/Javascript-ajax/" rel="prev" title="原生Javascript-ajax">
-                原生Javascript-ajax <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -486,7 +485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-number">1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码如下"><span class="nav-number">2.</span> <span class="nav-text">代码如下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧"><span class="nav-number">1.</span> <span class="nav-text">最近在忙着写一个Vue的小demo，博客就更的少了很多。今天连着补两篇blog吧</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#弹性布局"><span class="nav-number"></span> <span class="nav-text">弹性布局</span></a></div>
             
 
           </div>
